@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class InputProcessorTest {
     @Nested
     @DisplayName("자동차 이름 관련 테스트")
-    class CarNameTest{
+    class CarNameTest {
         @Test
         @DisplayName("자동차 이름 정상 분리")
         void 자동차_이름_정상_분리() {
@@ -53,6 +53,14 @@ public class InputProcessorTest {
             assertThatThrownBy(() -> InputProcessor.splitCarNames("pobi, ,woni"))
                     .isInstanceOf(IllegalArgumentException.class)
                     .hasMessage(ErrorMessage.EMPTY_CAR_NAME_INPUT.getMessage());
+        }
+
+        @Test
+        @DisplayName("중복된 자동차 이름 예외 발생")
+        void 중복된_자동차_이름_예외_발생() {
+            assertThatThrownBy(() -> InputProcessor.splitCarNames("pobi,pobi"))
+                    .isInstanceOf(IllegalArgumentException.class)
+                    .hasMessage(ErrorMessage.DUPLICATE_CAR_NAME.getMessage());
         }
     }
 

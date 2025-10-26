@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import racingcar.constant.ErrorMessage;
 import racingcar.constant.RacingConstants;
 import racingcar.model.Car;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

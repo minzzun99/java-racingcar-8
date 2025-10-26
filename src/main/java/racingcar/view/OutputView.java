@@ -4,7 +4,7 @@ public class OutputView {
     private static final String ROUND_RESULT_MESSAGE = "\n실행 결과";
     private static final String CAR_STATUS_FORMAT = "%s : %s%n";
     private static final String POSITION_SYMBOL = "-";
-    private static final String WINNER_MESSAGE = "\n최종 우승자 : ";
+    private static final String WINNER_MESSAGE = "최종 우승자 : ";
 
     public static void printRoundResultMessage() {
         System.out.println(ROUND_RESULT_MESSAGE);
@@ -18,4 +18,9 @@ public class OutputView {
     public static void printWinner(String winners) {
         System.out.println(WINNER_MESSAGE + winners);
     }
+
+    public static void printNewLine() {
+        System.out.println();
+    }
+
 }

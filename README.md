@@ -47,9 +47,9 @@
 
 ### 자동차 이동
 
-- [ ] 0에서 9까지의 랜덤 숫자를 생성
+- [X] 0에서 9까지의 랜덤 숫자를 생성
     - `camp.nextstep.edu.missionutils.Randoms`의 `pickNumberInRange()`를 활용
-- [ ] 값이 4 이상인 경우 자동차를 이동
+- [X] 값이 4 이상인 경우 자동차를 이동
 
 ### 자동차별 이동 거리 판별
 

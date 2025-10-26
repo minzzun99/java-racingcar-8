@@ -1,7 +1,9 @@
 package racingcar.util;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import racingcar.constant.ErrorMessage;
 import racingcar.constant.RacingConstants;
 
@@ -40,6 +42,8 @@ public class InputProcessor {
             validateEmptyName(processedName);
             carNames.add(processedName);
         }
+
+        validateDuplicateNames(carNames);
         return carNames;
     }
 
@@ -52,6 +56,13 @@ public class InputProcessor {
     private static void validateEmptyName(String name) {
         if (name.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessage.EMPTY_CAR_NAME_INPUT.getMessage());
+        }
+    }
+
+    private static void validateDuplicateNames(List<String> carNames) {
+        Set<String> names = new HashSet<>(carNames);
+        if (names.size() != carNames.size()) {
+            throw new IllegalArgumentException(ErrorMessage.DUPLICATE_CAR_NAME.getMessage());
         }
     }
 }

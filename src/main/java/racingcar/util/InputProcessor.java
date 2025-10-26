@@ -11,6 +11,12 @@ public class InputProcessor {
         return processNames(inputNames);
     }
 
+    private static void validateNullOrEmpty(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("자동차의 이름을 입력해주세요.");
+        }
+    }
+
     private static List<String> processNames(String[] inputNames) {
         List<String> carNames = new ArrayList<>();
         for (String name : inputNames) {

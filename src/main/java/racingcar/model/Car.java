@@ -8,25 +8,13 @@ public class Car {
     private static final int RANDOM_MIN = 0;
     private static final int RANDOM_MAX = 9;
 
-    private String name;
+    private final String name;
     private int position;
 
     public Car(String name) {
-        String processedName = name.strip();
-        validateName(processedName);
-        this.name = processedName;
-        this.position = 0;
-    }
-
-    private void validateName(String name) {
-        validateNullOrEmpty(name);
         validateLength(name);
-    }
-
-    private void validateNullOrEmpty(String name) {
-        if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException("자동차의 이름을 입력해주세요.");
-        }
+        this.name = name;
+        this.position = 0;
     }
 
     private void validateLength(String name) {

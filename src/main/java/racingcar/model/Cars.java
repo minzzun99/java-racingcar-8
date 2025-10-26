@@ -3,10 +3,9 @@ package racingcar.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import racingcar.constant.RacingConstants;
 
 public class Cars {
-    private static final String WINNERS_DELIMITER = ", ";
-
     private final List<Car> racingCars;
 
     public Cars(List<Car> racingCars) {
@@ -28,7 +27,7 @@ public class Cars {
         return racingCars.stream()
                 .filter(car -> car.getPosition() == maxPosition)
                 .map(Car::getName)
-                .collect(Collectors.joining(WINNERS_DELIMITER));
+                .collect(Collectors.joining(RacingConstants.WINNERS_DELIMITER));
     }
 
     private int getMaxPosition() {

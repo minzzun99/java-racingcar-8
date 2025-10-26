@@ -3,13 +3,12 @@ package racingcar.util;
 import java.util.ArrayList;
 import java.util.List;
 import racingcar.constant.ErrorMessage;
+import racingcar.constant.RacingConstants;
 
 public class InputProcessor {
-    private static final String INPUT_DELIMITER = ",";
-
     public static List<String> splitCarNames(String input) {
         validateInput(input);
-        String[] inputNames = input.split(INPUT_DELIMITER);
+        String[] inputNames = input.split(RacingConstants.INPUT_DELIMITER);
         return processNames(inputNames);
     }
 

@@ -1,6 +1,7 @@
 package racingcar.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.constant.ErrorMessage;
 
 public class Car {
     private static final int MAX_NAME_LENGTH = 5;
@@ -19,7 +20,8 @@ public class Car {
 
     private void validateLength(String name) {
         if (name.length() > MAX_NAME_LENGTH) {
-            throw new IllegalArgumentException("자동차의 이름은 " + MAX_NAME_LENGTH + "자 이하로 입력해주세요.");
+            throw new IllegalArgumentException(
+                    String.format(ErrorMessage.INVALID_CAR_NAME_LENGTH.getMessage(), MAX_NAME_LENGTH));
         }
     }
 
